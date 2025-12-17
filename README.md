@@ -266,3 +266,4 @@ Then customize and deploy! 🚀
 **Need help?** All components are fully documented and easy to modify.
 
 **Ready to launch?** Just `vercel --prod` and you're LIVE!
+# optik3
