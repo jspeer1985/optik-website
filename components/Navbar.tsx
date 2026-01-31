@@ -3,20 +3,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
     { href: '/', label: 'Home' },
+    { href: '/shop', label: 'Shop' },
     { href: '/about', label: 'About' },
-    { href: '/tokenomics', label: 'Tokenomics' },
-    { href: '/roadmap', label: 'Roadmap' },
-    { href: '/airdrop', label: 'Airdrop' },
-    { href: '/whitepaper', label: 'Whitepaper' },
-    { href: '/dex', label: 'DEX' },
-    { href: '/launchpad', label: 'Launchpad' },
+    { href: '/how-it-works', label: 'How It Works' },
   ];
 
   return (
@@ -25,14 +21,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <Image 
-              src="/android-chrome-192x192.png" 
-              alt="OPTIK" 
-              width={40} 
+            <Image
+              src="/android-chrome-192x192.png"
+              alt="OPTIK Gold"
+              width={40}
               height={40}
               className="rounded-full"
             />
-            <span className="text-xl font-bold optik-gradient-text">OPTIK</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold gold-gradient-text">OPTIK GOLD</span>
+              <span className="text-xs text-gray-400">Premium Web3 Shop</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -48,10 +47,16 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Connect Wallet Button */}
-          <button className="hidden md:block optik-btn text-sm">
-            Connect Wallet
-          </button>
+          {/* Cart and Wallet */}
+          <div className="hidden md:flex items-center gap-4">
+            <Link href="/cart" className="relative p-2 hover:text-optik-gold transition-colors">
+              <ShoppingCart size={24} />
+              <span className="cart-badge">0</span>
+            </Link>
+            <button className="gold-btn text-sm">
+              Connect Wallet
+            </button>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -77,7 +82,14 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <button className="w-full optik-btn mt-4">
+            <Link
+              href="/cart"
+              className="block text-gray-300 hover:text-optik-blue transition-colors py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Cart (0)
+            </Link>
+            <button className="w-full gold-btn mt-4">
               Connect Wallet
             </button>
           </div>

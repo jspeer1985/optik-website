@@ -4,12 +4,12 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'OPTIK Ecosystem | Solana DeFi Gaming Platform',
-  description: 'The ultimate Solana DeFi ecosystem combining DEX trading, staking vaults, play-to-earn games, and memecoin launchpad.',
-  keywords: 'Solana, DeFi, DEX, Staking, Gaming, Crypto, OPTIK, Memecoin, Launchpad',
+  title: 'OPTIK Gold Inc | Premium Web3 Ecommerce',
+  description: 'Shop premium products with cryptocurrency on Solana. Secure, fast, and decentralized ecommerce powered by blockchain technology.',
+  keywords: 'Ecommerce, Crypto, Solana, Web3, Shopping, OPTIK Gold, Blockchain, DeFi',
   openGraph: {
-    title: 'OPTIK Ecosystem',
-    description: 'Solana DeFi Gaming Platform',
+    title: 'OPTIK Gold Inc - Web3 Ecommerce',
+    description: 'Premium ecommerce with crypto payments',
     images: ['/android-chrome-192x192.png'],
   },
 }
